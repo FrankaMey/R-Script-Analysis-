@@ -26,7 +26,7 @@ across three sensory modalities.
 - `Voara - Ficus botryoides`
 
 
-## Author
-Franka Luisa Meyer
+## Authors
+Franka Luisa Meyer, 
 Omer Nevo
 
