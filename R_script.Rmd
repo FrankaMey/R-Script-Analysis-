@@ -21,10 +21,16 @@ knitr::opts_knit$set(root.dir = here())
 
 
 ```{r}
+setwd("C:/Users/frank/OneDrive/Desktop/R_analysis_paper")
+```
+
+
+```{r}
 rm(list = ls()) #clean workspace
 
 library(geometry)
 library(vegan)
+library(readxl)
 
 #Load data
 
@@ -457,7 +463,7 @@ color.vandrika2 <- pca.vandrika$x[,2]
 
 ### 1.3.1 Trait variation
 
-```{r}
+```{r, include=FALSE}
 # Load in data with Color-PCA and sugar content 
 
 guave_traits <- read.csv("data/Guave_traits.csv")
@@ -466,6 +472,20 @@ kalafana_traits <- read.csv("data/Kalafana_traits.csv")
 kalafam_traits <- read.csv("data/Kalafam_traits.csv")
 vandrika_traits <- read.csv("data/Vandrika_traits.csv")
 voara_traits <- read.csv("data/Voara_traits.csv")
+
+
+foha_color_pca1 <- read_excel("data/Color/pca_foha_1.xlsx")
+foha_color_pca2 <- read_excel("data/Color/pca_foha_2.xlsx")
+guave_color_pca1 <- read_excel("data/Color/pca_guave_1.xlsx")
+kalafam_color_pca1 <- read_excel("data/Color/pca_kalafam_1.xlsx")
+kalafana_color_pca1 <- read_excel("data/Color/pca_kalafana_1.xlsx")
+kalafana_color_pca2 <- read_excel("data/Color/pca_kalafana_2.xlsx")
+voara_color_pca1 <- read_excel("data/Color/pca_voara_1.xlsx")
+voara_color_pca2 <- read_excel("data/Color/pca_voara_2.xlsx")
+vandrika_color_pca1 <- read_excel("data/Color/pca_vandrika_1.xlsx")
+vandrika_color_pca2 <- read_excel("data/Color/pca_vandrika_2.xlsx")
+
+
 ```
 
 ```{r}
@@ -473,16 +493,17 @@ cv <- function(x) sd(x)/mean(x)
 
 
 # Calaculate variation of Color-PCAs
-cv_foha_color1 <- cv(fohanasity_traits$color_pca1)
-cv_foha_color2 <- cv(fohanasity_traits$color_pca2)
-cv_guave_color1 <- cv(guave_traits$color_pca1)
-cv_kalafam_color1 <- cv(kalafam_traits$color_pca1)
-cv_kalafana_color1 <-cv(kalafana_traits$color_pca1)
-cv_kalafana_color2 <-cv(kalafana_traits$color_pca2)
-cv_vandrika_color1 <-cv(vandrika_traits$color_pca1)
-cv_vandrika_color2 <-cv(vandrika_traits$color_pca2)
-cv_voara_color1 <-cv(voara_traits$color_pca1)
-cv_voara_color2 <-cv(voara_traits$color_pca2)
+
+cv_foha_color1 <- cv(foha_color_pca1$PCA1)
+cv_foha_color2 <- cv(foha_color_pca2$pca_2)
+cv_guave_color1 <- cv(guave_color_pca1$pca_1)
+cv_kalafam_color1 <- cv(kalafam_color_pca1$pca_1)
+cv_kalafana_color1 <-cv(kalafana_color_pca1$pca_1)
+cv_kalafana_color2 <-cv(kalafana_color_pca2$pca_2)
+cv_vandrika_color1 <-cv(vandrika_color_pca1$pca_1)
+cv_vandrika_color2 <-cv(vandrika_color_pca2$pca_2)
+cv_voara_color1 <-cv(voara_color_pca1$pca_1)
+cv_voara_color2 <-cv(voara_color_pca2$pca_2)
 ```
 
 
@@ -545,10 +566,6 @@ cor(voara_traits$value.puntc..res, voara_traits$sugar.content)
 
 # 2. Analysis 
 
-
-```{r}
-rm(list = ls())
-```
 
 Installing and loading packages
 ```{r results='hide', warning=FALSE, message=FALSE}

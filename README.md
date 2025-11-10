@@ -17,12 +17,12 @@ across three sensory modalities.
 ## Additional information 
 - For simplicity we used the local species names in the file naming and in the script. 
 - The following scientific names correspond to the respective species names: 
- -> Fohanasity - 
- -> Guave - 
- -> Kalafam - 
- -> Kalafana - 
- -> Vandrika - 
- -> Voara - 
+ -> Fohanasity - Psychotria reducta
+ -> Guave - Psidium cattleianum
+ -> Kalafam - Oncostemum nervosum
+ -> Kalafana - Oncostemum botryoides
+ -> Vandrika - Craspidospermum verticillatum
+ -> Voara - Ficus botryoides
 
 
 ## Author
